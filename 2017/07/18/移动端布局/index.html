@@ -1,0 +1,836 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="移动端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="精通移动端布局 - 概念篇 -">
+<meta name="keywords" content="移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端布局">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/移动端布局/index.html">
+<meta property="og:site_name" content="Icy&#39;s Blog">
+<meta property="og:description" content="精通移动端布局 - 概念篇 -">
+<meta property="og:image" content="http://yoursite.com/images/20170718-1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/20170718-2ppi-img.jpg">
+<meta property="og:image" content="http://yoursite.com/images/20170718_03.gif">
+<meta property="og:image" content="http://yoursite.com/images/20170718_04.gif">
+<meta property="og:image" content="http://yoursite.com/images/20170718_05.gif">
+<meta property="og:image" content="http://yoursite.com/images/o_visual-viewport.png">
+<meta property="og:image" content="http://yoursite.com/images/o_layout-viewport.png">
+<meta property="og:updated_time" content="2017-07-18T02:55:28.094Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端布局">
+<meta name="twitter:description" content="精通移动端布局 - 概念篇 -">
+<meta name="twitter:image" content="http://yoursite.com/images/20170718-1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/18/移动端布局/"/>
+
+
+
+
+
+  <title>移动端布局 | Icy's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Icy's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/18/移动端布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Icy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">移动端布局</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-18T10:10:32+08:00">
+                2017-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>精通移动端布局 - 概念篇 -<br><a id="more"></a><br>完整目录：</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><pre><code>物理像素
+设备独立像素
+CSS 像素
+PPI的概念
+DPR的概念
+缩放的概念
+viewPort 的概念
+viewport 渲染流程
+Meta 标签说明
+</code></pre><h2 id="物理像素"><a href="#物理像素" class="headerlink" title="物理像素"></a>物理像素</h2><p>物理像素又叫“设备像素”，他是显示设备中最微小的物理部件，每个像素可以根据操作系统设置自己的颜色和亮度，正是这些微小距离欺骗我们的眼睛从而看到图像效果。<br>物理像素也是厂商在出厂时就设置好了的————即一个设备的分辨率是固定不变的。</p>
+<h2 id="设备独立像素"><a href="#设备独立像素" class="headerlink" title="设备独立像素"></a>设备独立像素</h2><p>也叫“密度无关像素”，可以认为是计算机坐标系统中的一个点，这个点代表一个可由程序使用的虚拟像素（比如CSS像素），然后由相关系统转换为物理像素。</p>
+<h2 id="CSS-像素"><a href="#CSS-像素" class="headerlink" title="CSS 像素"></a>CSS 像素</h2><p>CSS像素是一个抽象单位，主要使用在浏览器上，用来精确度量（浏览器层面而言）WEB页面上的内容，一般来说CSS像素也被称之为设备无关像素(device - independent pixel) 简称DIPS。<br>在不同的屏幕上，CSS像素所呈现的物理尺寸实质上都是一样的，而不同的是CSS像素与所对应的物理像素具数是不一致的，在普通屏幕下，1个css像素对应的就是1个物理像素，而 retina 屏幕下，1个 css 像素对应的却是多个物理像素。这一点在移动端上会更加的明显，而在100%缩放模式下PC端上，我们就可以认为 1物理像素就等于1css像素。</p>
+<p>总的来说，物理像素是设备在物理层面上不可再分割的最小单元，而“设备独立像素”则是一个统称的概念，它主要指的是应用软件在应用层面上如何度量内容，可以这么说，CSS像素就是设备独立像素中的一种，是WEB浏览器主要采用的度量单位。</p>
+<h2 id="PPI的概念"><a href="#PPI的概念" class="headerlink" title="PPI的概念"></a>PPI的概念</h2><p>PPI 就是屏幕密度，它是指显示设备上每英寸（1英寸约等于2.54厘米）长度内存在的像素数量，单位即PPI。</p>
+<p>其换算公式如下：<br><img src="/images/20170718-1.jpg" alt="image"> </p>
+<p>PPI最直观的的效果可以参考下图：<br>PPI<br><img src="/images/20170718-2ppi-img.jpg" alt="image">：<br>按照苹果公司的技术营销宣传，在 320PPI 以上的屏幕都可以被称之为retina屏幕。</p>
+<h2 id="DPR的概念"><a href="#DPR的概念" class="headerlink" title="DPR的概念"></a>DPR的概念</h2><p>DPR 便是 device Pixel Ratio 的简称，即设备像素比，它反映了设备上的物理像素与设备独立像素对应关系，也就是说 DPR 可以让我们知道当前设备下逻辑像素与物理像素的对应情况。<br>它的值可以按照下面的公式计算出来:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">设备像素比 = 物理像素 / 设备独立像素</div></pre></td></tr></table></figure></p>
+<p>在JavaScript中我们可以直接通过以下window上的属性获取设备像素比</p>
+<pre><code>window.devicePixelRatio
+</code></pre><p>而在CSS中，可以通过以下属性获得:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-webkit-device-pixel-ratio;</div><div class="line">-webkit-min-device-pixel-ratio;</div><div class="line">-webkit-max-device-pixel-ratio;</div></pre></td></tr></table></figure></p>
+<h2 id="缩放的概念"><a href="#缩放的概念" class="headerlink" title="缩放的概念"></a>缩放的概念</h2><p>在说缩放之前，我们先定义一个略微严格的规定：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">100% 缩放情况下：1css像素 == 1物理像素</div></pre></td></tr></table></figure></p>
+<p>带着这个定义我们来看页面在浏览器中的缩放情况：<br>首先我们假如有一个2px <em> 2px 宽高的盒子。根据定义在100%缩放情况下 2px </em> 2px 是完全等同于 2px <em> 2px的物理像素。<br>如果现在去缩放浏览器，我们会发现2px</em>2px的尺寸会随着缩放而发生变化。实际上现代浏览器的缩放功能就是通过拉伸像素的方式实现的。而这种拉伸像素的方式也更能够让我们清晰了解独立像素与物理像素之间的差异。<br>首先，我们可以很明确的知道，浏览器不管怎么拉伸像素它也不可能改变物理层面上的像素(物理像素)，所以它能也只能够改变自己的逻辑像素 - CSS像素，在放大的情况下 1css像素 会占据多个物理像素，从而在应用层面上使显示区域宽度变小，浏览器为了能够显示完整的内容从而出现滚动条，而缩小的情况下，多个css像素会被合并在一个1个物理像素中去显示。但是这种方式实际上是一种有损的过程，因为用1个物理像素去表示多个CSS像素，会导致内容丢失更多的细节。正是因为css像素的丢失，才导致内容变的更小。<br>更直观的了解可以看下图：<br>100%模式下 1css像素就等于 1物理像素<br><img src="/images/20170718_03.gif" alt="image"><br>在放大的情况下，1css像素会占据多个物理像素<br><img src="/images/20170718_04.gif" alt="image"><br>在缩小的情况下，多个css像素会被合并在物理像素中<br><img src="/images/20170718_05.gif" alt="image"> </p>
+<h2 id="viewPort-的概念"><a href="#viewPort-的概念" class="headerlink" title="viewPort 的概念"></a>viewPort 的概念</h2><p>桌面环境下 viewport<br>viewport 实际上在桌面浏览器中就已经存在，让我们回忆下一下，如果现在页面上有一个空的 div ，其宽度默认是100%，那么这个100%的宽度是怎么产生的呢？我们可以知道它是继承其父元素 body，而body的宽度又是继承其父元素 html。所以 body 元素和它的父元素 html 一样宽。</p>
+<p>那么 html 元素的宽度是多少？它的宽度和浏览器窗口宽度一样。你可能不知道的是这个行为在理论上是如何工作的。理论上， html 元素的宽度是被viewport的宽度所限制的。 html 元素使用viewport宽度的100%。<br>在桌面环境下，viewport 实际上就等于浏览器窗口，拥有浏览器窗口的宽度和高度，但viewport并不是一个HTML结构，所以你不能用CSS来改变它。</p>
+<p>在桌面环境下我们可以很容易的理解viewport，但是在移动浏览器环境下它会有一些复杂。</p>
+<p>手机端 viewport<br>在手机端上viewport类似于一个虚拟的视口，通常情况下这个虚拟的视口要比设备屏幕宽。<br>将网页放入到虚拟的视口(viewport)中去显示，是为了解决过小的屏幕在显示过大的网页（如专为桌面浏览器设计的网页）时，导致出现滚动条从而影响在移动设备上的浏览体验，但同时也会导致页面整体布局的缩小，文字不清晰，链接不方便点击等问题，而且viewport也会破坏专门针对手机浏览器设计的网页布局。<br>所以在对于专门为手机端制作的网页，建议将viewport设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,user-scalable=no&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<p>若按照PPK大神的理论，可将viewport分为三种，而前文我们所说的用来显示页面的viewport，我们称之为 layout viewport，即布局 viewport，layout viewport 随着浏览器厂商的不同，其默认的尺寸也不尽相同，但常用的有 980px 1024px 等，除了layout viewport，还有 visual viewport，即视觉viewport，也就是我们设备屏幕的物理尺寸，它也是物理实际存在的，例如：iphone5 是 320 * 568 。<br>若就嵌套关系来说 layout viewport 是嵌入在 visual viewport 中的，具体关系可以参照下图：</p>
+<p><img src="/images/o_visual-viewport.png" alt="image"><br><img src="/images/o_layout-viewport.png" alt="image"> </p>
+<p>现在我们已经有两个viewport了：layout viewport 和 visual viewport。但开发者觉得还不够，因为现在越来越多的网站都会为移动设备进行单独的设计，所以必须还要有一个能完美适配移动设备的viewport。所谓的完美适配指的是：</p>
+<p>· 首先不需要用户缩放和横向滚动条就能正常的查看网站的所有内容；<br>· 其次显示的内容大小是合适的。<br>比如一段14px大小的文字，不会因为在一个高密度像素的屏幕里显示得太小而无法看清，理想的情况是这段14px的文字无论是在何种密度屏幕，何种分辨率下，显示出来的大小都是差不多的。当然，不只是文字，其他元素像图片什么的也是这个道理。ppk把这个viewport叫做 ideal viewport，也就是第三个viewport——移动设备的理想 viewport。<br>ideal viewport 并没有一个固定的尺寸，不同的设备拥有有不同的 ideal viewport。<br>但一般来说，ideal vieport 就等于 visual viewport。</p>
+<h2 id="viewport-渲染流程"><a href="#viewport-渲染流程" class="headerlink" title="viewport 渲染流程"></a>viewport 渲染流程</h2><p>不确保正确，但以下内容至少是我对一个页面在被载入到手机浏览器中渲染过程的猜想。<br>示例手机：</p>
+<p>分辨率：1920<em>1080<br>屏幕尺寸:640 </em> 360<br>设备像素比: 3<br>示例站点：<br>12306，年关将至想必也是大家比较常上一个网站</p>
+<p>内容：<br>layout viewport在渲染页面之前，会根据自身的宽度（默认或者meta指定）来设定CSS像素与 物理像素的占比。通过占比来决定内容的缩放程度，而这个缩放值，则是由 visual viewport 与 layout viewport决定的，其换算公式如下：</p>
+<pre><code>scale = layout viewport / visual viewport
+</code></pre><p>在正常情况下比较好理解，就如我手机分辨率宽度是1080来算，此时 我默认的viewport是980，现在基本上就是1css像素 == 1物理像素，但因为 PPI 的原因，单位物理像素要更加的小，所以整体页面被缩小的形式显示在我的手机屏幕中，而且，12306默认的宽度是960，所以这960相对于我viewpot还剩有20px的左右边距。因为我的物理像素是大于vieport默认的尺寸的，所以逻辑像素并没有缺省，但是如果在比较老的iphone5上面，其实际分辨率是 640*1136，而viewport也默认为980，实际上在展示页面的时候逻辑像素会超出物理像素300多，因此逻辑像素有缺省，整个页面是以一种牺牲部分细节有损的方式去展示的。</p>
+<p>如果我指定了viewport的宽度为 width = device-width 。那么此时 1css像素 == DPR * 物理像素，同时这个值也是当前的缩放值。但是我若指定了 initial-scale = 1 时，则强制了 css像素 与 物理像素为1:1的对比关系。</p>
+<p>这些还都是简单的渲染流程，如果涉及到缩放，实际上手机端在去渲染网页时，其情况可能会更加的复杂，而且，不同的手机厂商，不同的浏览器厂商，其实现的方式都是有差异的，如果想制定一套统一的标准去试图阐述移动端网页渲染流程，我个人认为实际上也是没有意义的。我们只需要知道大致常规的渲染流程，就可以更好的帮助我们进行移动端的网页开发。</p>
+<h2 id="Meta-标签说明"><a href="#Meta-标签说明" class="headerlink" title="Meta 标签说明"></a>Meta 标签说明</h2><p>meta标签首先是由苹果公司在其safari浏览器中引入的，目的就是解决移动设备的viewport问题。后来安卓以及各大浏览器厂商也都纷纷效仿，引入对meta viewport的支持，事实也证明这个东西还是非常有用。</p>
+<p>在苹果的规范中，meta viewport 有6个属性(暂且把content中的那些东西称为一个个属性和值)，如下：<br> Attribute |  Value |  Description </p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+<th>Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> width</td>
+<td>num</td>
+<td>设置layout viewport 的宽度，为一个正整数，或字符串”width-device”</td>
+</tr>
+<tr>
+<td> initial-scale</td>
+<td>num</td>
+<td>设置页面的初始缩放值，为一个数字，可以带小数  </td>
+</tr>
+<tr>
+<td> minimum-scale</td>
+<td>num</td>
+<td>允许用户的最小缩放值，为一个数字，可以带小数  </td>
+</tr>
+<tr>
+<td> maximum-scale</td>
+<td>num</td>
+<td>允许用户的最大缩放值，为一个数字，可以带小数  </td>
+</tr>
+<tr>
+<td> height</td>
+<td>num</td>
+<td>设置layout viewport 的高度，这个属性对我们并不重要，很少使用 </td>
+</tr>
+<tr>
+<td> user-scalable</td>
+<td>str</td>
+<td>是否允许用户进行缩放，值为”no”或”yes”, no 代表不允许，yes代表允许</td>
+</tr>
+</tbody>
+</table>
+<p>这些属性可以同时使用，也可以单独使用或混合使用，多个属性同时使用时用逗号隔开就行了。<br>此外，在安卓中还支持 target-densitydpi 这个私有属性，它表示目标设备的密度等级，可以自动设定css中的1px代表多少物理像素，开发者无需考虑换算的过程<br>target-densitydpi　值可以为一个数值或 high-dpi 、medium-dpi、low-dpi、device-dpi 这几个字符串中的一个，特别说明的是，当 target-densitydpi=device-dpi 时， css中的1px会等于物理像素中的1px。</p>
+<p>因为这个属性只有安卓支持，并且安卓已经决定要废弃target-densitydpi 这个属性了，所以这个属性我们要避免进行使用 。</p>
+<p>参考链接：<br><a href="http://blog.csdn.net/aiolos1111/article/details/51967744" target="_blank" rel="external">http://blog.csdn.net/aiolos1111/article/details/51967744</a><br><a href="http://www.cnblogs.com/Mrs-cc/p/5329545.html" target="_blank" rel="external">http://www.cnblogs.com/Mrs-cc/p/5329545.html</a><br><a href="http://www.cnblogs.com/2050/p/3877280.html" target="_blank" rel="external">http://www.cnblogs.com/2050/p/3877280.html</a></p>
+<p>移动端布局实践<br>    混合方式<br>    REM 方式<br>        响应式<br>        JS自动换算<br>    缩放方式<br>        CSS3 缩放<br>        viewport 缩放<br> 相关补充<br>    为什么需要meta标签？<br>    传统响应式布局与移动端响应式的区别<br>    移动端字体以及大小的设置<br>    移动端背景图缩放设置<br>    使用Sass提高px与rem转换效率<br>    通过Chrome进行真机调试<br>    weinre 远程调试</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/移动端/" rel="tag"># 移动端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/02/hexo-theme/" rel="next" title="hexo主题">
+                <i class="fa fa-chevron-left"></i> hexo主题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/logo.png"
+               alt="icy" />
+          <p class="site-author-name" itemprop="name">icy</p>
+           
+              <p class="site-description motion-element" itemprop="description">冰晨的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://daiyichen.github.io/" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://hexo.io/zh-cn/docs/" title="hexo" target="_blank">hexo</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物理像素"><span class="nav-number">1.1.</span> <span class="nav-text">物理像素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备独立像素"><span class="nav-number">1.2.</span> <span class="nav-text">设备独立像素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-像素"><span class="nav-number">1.3.</span> <span class="nav-text">CSS 像素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PPI的概念"><span class="nav-number">1.4.</span> <span class="nav-text">PPI的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DPR的概念"><span class="nav-number">1.5.</span> <span class="nav-text">DPR的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缩放的概念"><span class="nav-number">1.6.</span> <span class="nav-text">缩放的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewPort-的概念"><span class="nav-number">1.7.</span> <span class="nav-text">viewPort 的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#viewport-渲染流程"><span class="nav-number">1.8.</span> <span class="nav-text">viewport 渲染流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Meta-标签说明"><span class="nav-number">1.9.</span> <span class="nav-text">Meta 标签说明</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">icy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
