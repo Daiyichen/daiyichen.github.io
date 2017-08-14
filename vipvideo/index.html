@@ -1,12 +1,18 @@
+---
+layout: false
+title: "vip视频"
+date: 2017-08-14 15:03:48
+---
+
 <html lang="en">
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="国内视频网站在线解析接口">
     <title>国内视频网站在线解析接口</title>
-    <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Raleway:200">
-    <link href="http://cdn.bootcss.com/pure/0.6.0/pure-min.css" rel="stylesheet">
-	<link href="http://static.demo.ruyo.net/html/css2.css" rel="stylesheet">
+
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
 	<style>
 		.vod {
 		width: 100%;
@@ -15,7 +21,7 @@
 	</style>
 </head>
 <body>
-    <div id="main">
+    <div id="main" class="container">
         <div class="header">
             <h2>国内视频网站在线解析接口</h2>
         </div>
@@ -23,21 +29,29 @@
             <p><small>所有接口皆收集于网络 , 本页面只限测试使用。不保证所有线路都可以使用！<br>该页面可以直接 <code>Ctrl + S</code> 保存到本地离线使用！
     
             </small></p>
-           <div class="pure-form">
-				<fieldset>
-					
-					<select id="sel"></select>
-					<input type="text" id="url" placeholder="http://">
-					<select id="open">
-						<option value="0">新窗口播放</option>
-						<option value="1">本窗口播放</option>
+           <div class="form-group">
+            <div class="form-row">
+    			<div class="col">
+					<select id='sel' class="form-control"></select>
+				</div>
+				<div class="col">
+					<input type="text" id="url" placeholder="http://" class="form-control">
+				</div>
+				<div class="col">
+					<select id='open' class="form-control">
+						<option value='0'>新窗口播放</option>
+						<option value='1'>本窗口播放</option>
 					</select>
-					<button class="pure-button pure-button-primary" onclick="play();">点击播放</button>
-				</fieldset>
+				</div>
+				<div class="col">
+					<button class="btn btn-primary" onclick="play();">点击播放</button>
+				</div>
+			</div>
 			</div>
 		</div>
-     <iframe border="0" class="vod" id="vplay" name="vplay" src="" allowfullscreen allowtransparency="" frameborder="0">
-	</iframe>
+	</div>
+		 <iframe border="0"  class="vod" id="vplay" name="vplay" src=""  allowfullscreen="" allowtransparency="" frameborder="0"></iframe>
+
       
 	<script>
 	var data = [
@@ -104,4 +118,6 @@
 		}
 	}
 	</script>
-</div></body></html>
+</body>
+
+</html>
