@@ -267,6 +267,176 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/vue-cart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="icy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Icy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/26/vue-cart/" itemprop="url">vue.js加入购物车小球动画</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T15:31:27+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>生成一个动画小球的div,并且生成五个小球,五个是为了生成一定数量的小球来作为操作使用,按照小球动画的速度,一般来说五个也可以保证有足够的小球数量来运行动画</p>
+</li>
+<li><p>动画的内容分别是外层和内层,外层控制动画小球的轨道和方向,内层控制动画小球的运行状态</p>
+</li>
+<li><p>动画使用vue的js钩子实现</p>
+</li>
+<li><p>因为小球动画只有一个方向(只执行单方向从上到下滚落),所以只用了before-enter,enter,after-enter</p>
+</li>
+<li><p>用v-show控制小球的可见性,在动画执行期间可见,其余时候隐藏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;ball-container&quot;&gt;</div><div class="line">    &lt;transition name=&quot;fade&quot; v-for=&quot;ball in balls&quot; :key=&quot;ball&quot; @before-enter=&quot;beforeEnter&quot; @enter=&quot;enter&quot; @after-enter=&quot;afterEnter&quot;&gt;</div><div class="line">      &lt;div class=&quot;ball&quot; v-show=&quot;ball.show&quot;&gt;</div><div class="line">        &lt;div class=&quot;inner inner-hook&quot;&gt;&lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/transition&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>设置了balls数组来代表五个小球</p>
+</li>
+<li><p>设置了dropBalls数组正在运行的小球</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">data()&#123;</div><div class="line">  return &#123;</div><div class="line">    balls: [</div><div class="line">      &#123;</div><div class="line">        show: false</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        show:  false</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        show:  false</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        show:  false</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        show:  false</div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    dropBalls:[]</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>只要触发了drop事件,不止是drop事件里面的代码会执行,另外几个vue的js监听钩子也会一起按顺序执行</p>
+<ul>
+<li><p>触发了drop事件</p>
+</li>
+<li><p>beforeEnter开始执行</p>
+</li>
+<li><p>enter开始执行</p>
+</li>
+<li><p>afterEnter开始执行</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>drop事件的触发可以通过点击cartcontrol组件的添加小球按钮addCart事件触发使用$emit,也可以父组件this.$refs.shopcart.drop(target);直接触发</p>
+<ul>
+<li>这么做的目的是实现,在子组件cartcontrol点击之后,可以将该dom传给父组件goods然后再传给子组件shopcart,(因为目前他们之间的通道就是这样,shopcart子组件并没有导入cartcontrol子组件,所以没有直接通讯)这样就实现了多个组件之间的通讯,从而可以实现需求,例如这里就是实现点击子组件cartcontrol后添加一个动画,将小球滑落到另外一个组件shopcart</li>
+</ul>
+</li>
+<li><p>$emit是触发当前实例上的事件。附加参数都会传给监听器回调。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">  drop(el) &#123; </div><div class="line">  //触发一次事件就会将所有小球进行遍历</div><div class="line">    for (let i = 0; i &lt; this.balls.length; i++) &#123;</div><div class="line">      let ball = this.balls[i];</div><div class="line">      if (!ball.show) &#123; //将false的小球放到dropBalls</div><div class="line">        ball.show = true;</div><div class="line">        ball.el = el; //设置小球的el属性为一个dom对象</div><div class="line">        this.dropBalls.push(ball); </div><div class="line">        return;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  beforeEnter(el)&#123; //这个方法的执行是因为这是一个vue的监听事件</div><div class="line">    let count = this.balls.length;</div><div class="line">    while (count--) &#123;</div><div class="line">      let ball = this.balls[count];</div><div class="line">      if (ball.show) &#123;</div><div class="line">        let rect = ball.el.getBoundingClientRect(); //获取小球的相对于视口的位移(小球高度)</div><div class="line">        let x = rect.left - 32;</div><div class="line">        let y = -(window.innerHeight - rect.top - 22); //负数,因为是从左上角往下的的方向</div><div class="line">        el.style.display = &apos;&apos;; //清空display</div><div class="line">        el.style.webkitTransform = `translate3d(0,$&#123;y&#125;px,0)`; </div><div class="line">        el.style.transform = `translate3d(0,$&#123;y&#125;px,0)`;</div><div class="line">        //处理内层动画</div><div class="line">        let inner = el.getElementsByClassName(&apos;inner-hook&apos;)[0]; //使用inner-hook类来单纯被js操作</div><div class="line">        inner.style.webkitTransform = `translate3d($&#123;x&#125;px,0,0)`;</div><div class="line">        inner.style.transform = `translate3d($&#123;x&#125;px,0,0)`;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  enter(el, done) &#123; //这个方法的执行是因为这是一个vue的监听事件</div><div class="line">    /* eslint-disable no-unused-vars */</div><div class="line">    let rf = el.offsetHeight; //触发重绘html</div><div class="line">    this.$nextTick(() =&gt; &#123; //让动画效果异步执行,提高性能</div><div class="line">      el.style.webkitTransform = &apos;translate3d(0,0,0)&apos;;</div><div class="line">      el.style.transform = &apos;translate3d(0,0,0)&apos;;</div><div class="line">      //处理内层动画</div><div class="line">      let inner = el.getElementsByClassName(&apos;inner-hook&apos;)[0]; //使用inner-hook类来单纯被js操作</div><div class="line">      inner.style.webkitTransform = &apos;translate3d(0,0,0)&apos;;</div><div class="line">      inner.style.transform = &apos;translate3d(0,0,0)&apos;;</div><div class="line">      el.addEventListener(&apos;transitionend&apos;, done); //Vue为了知道过渡的完成，必须设置相应的事件监听器。</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  afterEnter(el) &#123; //这个方法的执行是因为这是一个vue的监听事件</div><div class="line">    let ball = this.dropBalls.shift(); //完成一次动画就删除一个dropBalls的小球</div><div class="line">    if (ball) &#123;</div><div class="line">      ball.show = false;</div><div class="line">      el.style.display = &apos;none&apos;; //隐藏小球</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>关于transitionend</p>
+</li>
+<li><p>关于drop方法,是实现每一个ball的show属性和el属性处理,并且点击一次会自动将一个小球放到dropBalls数组里面,放到里面就代表的是一个小球已经被开始执行动画,但是由于动画是异步的,所以先主动设置.</p>
+</li>
+<li><p>关于getBoundingClientRect(位移的计算是从左上角开始)</p>
+</li>
+<li><p>使用getBoundingClientRect获取到当前元素的坐标,然后需要位移的left减去元素的宽获取真正的最终位移x坐标</p>
+</li>
+</ul>
+<p>使用getBoundingClientRect获取到当前元素的坐标,然后需要当前屏幕的高度减去元素的top再减去元素本身的高度获取到真正的最终位移y坐标,并且这个是负数,因为是从左上角往下的方向</p>
+<ul>
+<li><p>关于html重绘</p>
+<p>因为浏览器对于重绘是有要求并且是有队列完成的,这是主要为了性能,虽然动画隐藏了小球display none,但没有触发html重绘,或者说没有立即触发html重绘,所以需要手动</p>
+</li>
+</ul>
+<p>let rf = el.offsetHeight; 这是一个手动触发html重绘的方法</p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="external">网页性能管理详解</a></p>
+<p><a href="http://www.cnblogs.com/zichi/p/4720000.html" target="_blank" rel="external">高性能JavaScript 重排与重绘</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.ball-container</div><div class="line">      .ball</div><div class="line">        position fixed</div><div class="line">        left: 32px</div><div class="line">        bottom: 22px</div><div class="line">        z-index:200</div><div class="line">        transition: all .6s cubic-bezier(0.49, -0.29, 0.75, 0.41)</div><div class="line">        .inner</div><div class="line">          width 16px</div><div class="line">          height 16px</div><div class="line">          border-radius 50%</div><div class="line">          background rgb(0,160,220)</div><div class="line">          transition: all .6s linear</div></pre></td></tr></table></figure>
+<p>关于cubic-bezier(0.49, -0.29, 0.75, 0.41),是动画抛物曲线(贝塞尔曲线)的配置,基于css3实现,<a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank" rel="external">http://cubic-bezier.com/#.17,.67,.83,.67</a>,参考贝塞尔曲线与CSS3动画、SVG和canvas的基情 ,至于抛物线放在外层就是为了控制内层的元素的轨道和方向的.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/hexo自定义网页/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1131,7 +1301,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1153,7 +1323,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1219,8 +1389,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
