@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="生成一个动画小球的div,并且生成五个小球,五个是为了生成一定数量的小球来作为操作使用,按照小球动画的速度,一般来说五个也可以保证有足够的小球数量来运行动画  动画的内容分别是外层和内层,外层控制动画小球的轨道和方向,内层控制动画小球的运行状态  动画使用vue的js钩子实现  因为小球动画只有一个方向(只执行单方向从上到下滚落),所以只用了before-enter,enter,after-en">
+<meta name="description" content="使用vuejs实现高仿饿了么页面中，加入购物车动画的实现">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue.js加入购物车小球动画">
 <meta property="og:url" content="http://yoursite.com/2018/01/26/vue-cart/index.html">
 <meta property="og:site_name" content="Icy&#39;s Blog">
-<meta property="og:description" content="生成一个动画小球的div,并且生成五个小球,五个是为了生成一定数量的小球来作为操作使用,按照小球动画的速度,一般来说五个也可以保证有足够的小球数量来运行动画  动画的内容分别是外层和内层,外层控制动画小球的轨道和方向,内层控制动画小球的运行状态  动画使用vue的js钩子实现  因为小球动画只有一个方向(只执行单方向从上到下滚落),所以只用了before-enter,enter,after-en">
-<meta property="og:updated_time" content="2018-01-26T07:49:25.167Z">
+<meta property="og:description" content="使用vuejs实现高仿饿了么页面中，加入购物车动画的实现">
+<meta property="og:updated_time" content="2018-01-26T08:21:16.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue.js加入购物车小球动画">
-<meta name="twitter:description" content="生成一个动画小球的div,并且生成五个小球,五个是为了生成一定数量的小球来作为操作使用,按照小球动画的速度,一般来说五个也可以保证有足够的小球数量来运行动画  动画的内容分别是外层和内层,外层控制动画小球的轨道和方向,内层控制动画小球的运行状态  动画使用vue的js钩子实现  因为小球动画只有一个方向(只执行单方向从上到下滚落),所以只用了before-enter,enter,after-en">
+<meta name="twitter:description" content="使用vuejs实现高仿饿了么页面中，加入购物车动画的实现">
 
 
 
@@ -307,6 +307,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -331,7 +353,9 @@
       
 
       
-        <ul>
+        <p>使用vuejs实现高仿饿了么页面中，加入购物车动画的实现</p>
+<a id="more"></a>
+<ul>
 <li><p>生成一个动画小球的div,并且生成五个小球,五个是为了生成一定数量的小球来作为操作使用,按照小球动画的速度,一般来说五个也可以保证有足够的小球数量来运行动画</p>
 </li>
 <li><p>动画的内容分别是外层和内层,外层控制动画小球的轨道和方向,内层控制动画小球的运行状态</p>
@@ -389,7 +413,7 @@
 <p><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="external">网页性能管理详解</a></p>
 <p><a href="http://www.cnblogs.com/zichi/p/4720000.html" target="_blank" rel="external">高性能JavaScript 重排与重绘</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.ball-container</div><div class="line">      .ball</div><div class="line">        position fixed</div><div class="line">        left: 32px</div><div class="line">        bottom: 22px</div><div class="line">        z-index:200</div><div class="line">        transition: all .6s cubic-bezier(0.49, -0.29, 0.75, 0.41)</div><div class="line">        .inner</div><div class="line">          width 16px</div><div class="line">          height 16px</div><div class="line">          border-radius 50%</div><div class="line">          background rgb(0,160,220)</div><div class="line">          transition: all .6s linear</div></pre></td></tr></table></figure>
-<p>关于cubic-bezier(0.49, -0.29, 0.75, 0.41),是动画抛物曲线(贝塞尔曲线)的配置,基于css3实现,<a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank" rel="external">http://cubic-bezier.com/#.17,.67,.83,.67</a>,参考贝塞尔曲线与CSS3动画、SVG和canvas的基情 ,至于抛物线放在外层就是为了控制内层的元素的轨道和方向的.</p>
+<p>关于cubic-bezier(0.49, -0.29, 0.75, 0.41),是动画抛物曲线(贝塞尔曲线)的配置,基于css3实现,<a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank" rel="external">http://cubic-bezier.com/#.17,.67,.83,.67</a>,参考<a href="http://www.zhangxinxu.com/wordpress/2013/08/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF-cubic-bezier-css3%E5%8A%A8%E7%94%BB-svg-canvas/" target="_blank" rel="external">贝塞尔曲线与CSS3动画、SVG和canvas的基情</a>,至于抛物线放在外层就是为了控制内层的元素的轨道和方向的.</p>
 
       
     </div>
@@ -514,7 +538,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
